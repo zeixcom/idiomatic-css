@@ -120,6 +120,7 @@ in useful diffs and blames.
 * Use one level of indentation for each declaration.
 * Include a single space after the colon of a declaration.
 * Use lowercase and shorthand hex values, e.g., `#aaa`.
+* Use shortform of `margin`and `padding` whenever possible.
 * Use single or double quotes consistently. Preference is for double quotes,
   e.g., `content: ""`.
 * Quote attribute values in selectors, e.g., `input[type="checkbox"]`.
@@ -170,22 +171,20 @@ box-model) together.
     bottom: 0;
     left: 0;
 
-    /* Display & Box Model */
-    display: inline-block;
-    overflow: hidden;
-    box-sizing: border-box;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    border: 10px solid #333;
-    margin: 10px;
-
-    /* Other */
+    /* Alphabetical order */
     background: #000;
+    border: 10px solid #333;
+    box-sizing: border-box;
     color: #fff;
+    display: inline-block;
     font-family: sans-serif;
     font-size: 16px;
+    height: 100px;
+    overflow: hidden;
+    margin: 10px;
+    padding: 10px;
     text-align: right;
+    width: 100px;
 }
 ```
 
@@ -220,11 +219,9 @@ be used; one example is shown below.
 }
 ```
 
-### Preprocessors: additional format considerations
+### Preprocessors (SASS): additional format considerations
 
-Different CSS preprocessors have different features, functionality, and syntax.
-Your conventions should be extended to accommodate the particularities of any
-preprocessor in use. The following guidelines are in reference to Sass.
+The following guidelines are in reference to Sass.
 
 * Limit nesting to 1 level deep. Reassess any nesting more than 2 levels deep.
   This prevents overly-specific CSS selectors.
@@ -280,14 +277,12 @@ An example of various conventions.
  *
  * Must only contain `.cell` children.
  *
- * 1. Remove inter-cell whitespace
- * 2. Prevent inline-block cells wrapping
  */
 
 .grid {
     height: 100%;
-    font-size: 0; /* 1 */
-    white-space: nowrap; /* 2 */
+    font-size: 0; /* Remove inter-cell whitespace */
+    white-space: nowrap; /* Prevent inline-block cells wrapping */
 }
 
 /**
@@ -295,9 +290,6 @@ An example of various conventions.
  *
  * No explicit width by default. Extend with `.cell-n` classes.
  *
- * 1. Set the inter-cell spacing
- * 2. Reset white-space inherited from `.grid`
- * 3. Reset font-size inherited from `.grid`
  */
 
 .cell {
@@ -306,11 +298,11 @@ An example of various conventions.
     overflow: hidden;
     box-sizing: border-box;
     height: 100%;
-    padding: 0 10px; /* 1 */
+    padding: 0 10px; /* Set the inter-cell spacing */
     border: 2px solid #333;
     vertical-align: top;
-    white-space: normal; /* 2 */
-    font-size: 16px; /* 3 */
+    white-space: normal; /* Reset white-space inherited from `.grid` */
+    font-size: 16px; /* Reset font-size inherited from `.grid` */
 }
 
 /* Cell states */
@@ -337,31 +329,10 @@ An example of various conventions.
 }
 ```
 
-
-## Translations
-
-* [Bahasa Indonesia](https://github.com/necolas/idiomatic-css/tree/master/translations/id-ID)
-* [Česky](https://github.com/necolas/idiomatic-css/tree/master/translations/cs-CZ)
-* [Dansk](https://github.com/necolas/idiomatic-css/tree/master/translations/da-DK)
-* [Deutsch](https://github.com/necolas/idiomatic-css/tree/master/translations/de-DE)
-* [Español](https://github.com/necolas/idiomatic-css/tree/master/translations/es-ES)
-* [Français](https://github.com/necolas/idiomatic-css/tree/master/translations/fr-FR)
-* [Italiano](https://github.com/necolas/idiomatic-css/tree/master/translations/it-IT)
-* [日本語](https://github.com/necolas/idiomatic-css/tree/master/translations/ja-JP)
-* [한국어](https://github.com/necolas/idiomatic-css/tree/master/translations/ko-KR)
-* [Nederlands](https://github.com/necolas/idiomatic-css/tree/master/translations/nl-NL)
-* [Polski](https://github.com/necolas/idiomatic-css/tree/master/translations/pl-PL)
-* [Português (Brasil)](https://github.com/necolas/idiomatic-css/tree/master/translations/pt-BR)
-* [Русский](https://github.com/necolas/idiomatic-css/tree/master/translations/ru-RU)
-* [Srpski](https://github.com/necolas/idiomatic-css/tree/master/translations/sr-SR)
-* [Türkçe](https://github.com/necolas/idiomatic-css/tree/master/translations/tr-TR)
-* [正體中文](https://github.com/necolas/idiomatic-css/tree/master/translations/zh-TW)
-* [简体中文](https://github.com/necolas/idiomatic-css/tree/master/translations/zh-CN)
-
-
 <a name="acknowledgements"></a>
 ## Acknowledgements
 
+This is a forked version of [idiomatic.js](https://github.com/rwldrn/idiomatic.js).
 Thanks to everyone who has provided translations and to all those who
 contributed to [idiomatic.js](https://github.com/rwldrn/idiomatic.js). It was a
 source of inspiration, quotations, and guidelines.
